@@ -15,6 +15,8 @@ public class CountWords {
         for(String word : arrayOfStrings){
             System.out.println(word);
             //asd
+            //another one
+            
         }
     }
 }
