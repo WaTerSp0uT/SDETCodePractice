@@ -1,22 +1,37 @@
 package javapractice;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CountWords {
     public static void main(String[] args) {
 
 
-        countWords("  Hello    myName   is dasd  t      ");
+        countWords("  Hello    myName   is dasd  t  is Hello   dasd  ");
     }
 
+
+
     public static void countWords (String strInput){
+        //splitting to an array
         String[] arrayOfStrings = strInput.trim().split("\\s+");
 
-        System.out.println("Thre are "+ arrayOfStrings.length+ " - counted words:");
+        //Putting into the map with keys and counting it
+        Map<String,Integer> mapOfWords = new HashMap<>();
 
-        for(String word : arrayOfStrings){
-            System.out.println(word);
-            //asd
-            //another one
-            
+        for(int i=0; i<arrayOfStrings.length; i++){
+            if(!mapOfWords.containsKey(arrayOfStrings[i])){
+                mapOfWords.put(arrayOfStrings[i], 1);
+            }else {
+                mapOfWords.put(arrayOfStrings[i], mapOfWords.get(arrayOfStrings[i]) + 1);
+            }
         }
+
+        System.out.println("There are "+ arrayOfStrings.length + " of words");
+        for(String map : mapOfWords.keySet()){
+            System.out.println("Then count for word:"+ map +" is "+ mapOfWords.get(map));
+        }
+
+
     }
 }
