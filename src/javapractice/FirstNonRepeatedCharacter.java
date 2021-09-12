@@ -18,7 +18,7 @@ public class FirstNonRepeatedCharacter {
         Map<Character, Integer> mapChars = new LinkedHashMap<>();
 
         char[] arrOfChars = str.toLowerCase().toCharArray();
-
+        //Saving into the Map with count of char repeated
         for (int i=0; i < arrOfChars.length; i++){
             if(!mapChars.containsKey(arrOfChars[i]) ){
                 mapChars.put(arrOfChars[i], 1);
@@ -26,6 +26,7 @@ public class FirstNonRepeatedCharacter {
                mapChars.put(arrOfChars[i] , mapChars.get(arrOfChars[i])+1 );
             }
         }
+        //Checking Map oneByOne if count more then 1 then it's first REPEATED
         /*
         for (Character loopedChar : mapChars.keySet() ){
             if(mapChars.get(loopedChar)==1){
@@ -34,6 +35,7 @@ public class FirstNonRepeatedCharacter {
             }
         }
         */
+        //Checking Map oneByOne if count more then 1 then it's first REPEATED
         for (Map.Entry<Character,Integer> entry : mapChars.entrySet() ){
             if(entry.getValue()==1){
                 System.out.println("Here is first NON repeated character ->"+ entry.getKey());
