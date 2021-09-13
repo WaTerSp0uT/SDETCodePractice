@@ -42,7 +42,7 @@ public class DuplicatesInArrayDemo {
                 System.out.println("Hash Duplicates element is :" + num);
         }
     }
-    //Using HashMap <Key,Count>
+    //Using HashMap <Key,Count> o(n)
     public static void findDuplicateUsingHashMap (int[] numbArr){
         Map <Integer,Integer> myMap = new HashMap<>();
 
